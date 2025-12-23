@@ -1,0 +1,122 @@
+:root {
+  --background: #e3e4e0;
+  --foreground: #100e09;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@font-face {
+  font-family: "Neue Montreal Medium";
+  src: url("/assets/fonts/NeueMontrealMedium.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: "Neue Montreal Medium";
+  background-color: var(--background);
+  color: var(--foreground);
+  text-transform: uppercase;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.intro,
+.outro {
+  width: 100%;
+  height: 100dvh;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: calc(40 / var(--vw) * var(--multiplier));
+  padding-bottom: 1rem;
+  position: relative;
+}
+
+.content {
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  user-select: none;
+}
+
+.content h1 {
+  max-width: 90%;
+  text-align: center;
+}
+
+.chars,
+.lines,
+.words {
+  will-change: transform;
+}
+
+.selected-type {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.selected-type button {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--foreground);
+  font-size: 0.875rem;
+  transition: background-color 0.3s, color 0.3s;
+  text-transform: uppercase;
+}
+
+.selected-type button.active {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
+.start-button {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--foreground);
+  background-color: var(--foreground);
+  color: var(--background);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+@media screen and (max-width: 768px) {
+  .content h1 {
+    font-size: 0.5rem;
+  }
+}

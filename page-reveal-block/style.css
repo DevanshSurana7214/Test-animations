@@ -1,0 +1,222 @@
+@font-face {
+  font-family: "DM Sans";
+  src: url("/assets/fonts/DMSansRegular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "DM Sans";
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .title {
+  font-size: clamp(1.2rem, 5vw, 4rem);
+  text-align: center;
+  z-index: 1;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 0.5rem;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  overflow: hidden;
+  text-align: center;
+}
+
+.word1 {
+  transform: translate(0px, 100px);
+  display: inline-block;
+  will-change: transform;
+}
+
+.word2 {
+  transform: translate(0px, -100px);
+  display: inline-block;
+  will-change: transform;
+}
+
+.image-container {
+  position: absolute;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+}
+
+.image-container:nth-child(2) {
+  width: 250px;
+  aspect-ratio: 3 / 4;
+  top: 25%;
+  left: 30%;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  will-change: clip-path;
+}
+
+.image-container:nth-child(3) {
+  width: 300px;
+  aspect-ratio: 4/5;
+  top: 30%;
+  right: 10%;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  will-change: clip-path;
+}
+
+.image-container:nth-child(4) {
+  width: 400px;
+  aspect-ratio: 3 / 2;
+  top: 80%;
+  left: 30%;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  will-change: clip-path;
+}
+
+.image-container:last-child {
+  width: 500px;
+  aspect-ratio: 5 / 3;
+  top: 80%;
+  left: 70%;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  will-change: clip-path;
+}
+
+.image-container.ordered {
+  top: 50%;
+  left: 50%;
+  width: 20%;
+  aspect-ratio: 1 / 1;
+  transform: translate(-50%, -50%);
+}
+
+.overlay-preload {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  color: white;
+  gap: 0;
+}
+
+.overlay-preload .preload-block {
+  width: 100%;
+  height: 100%;
+  background-color: #ff4d07;
+  will-change: clip-path;
+}
+
+.loader-percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  color: white;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  letter-spacing: 0.15rem;
+  overflow: hidden;
+}
+
+.char {
+  display: inline-block;
+  will-change: transform;
+}
+
+.loader-spinner {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #eaeaea;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+  will-change: transform;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .image-container:nth-child(2) {
+    width: 30%;
+    aspect-ratio: 3 / 4;
+    top: 20%;
+    left: 30%;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    will-change: clip-path;
+    transform: translate(-50%, -50%);
+  }
+
+  .image-container:nth-child(3) {
+    width: 30%;
+    aspect-ratio: 4 / 5;
+    top: 30%;
+    right: 5%;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    will-change: clip-path;
+    transform: translate(0, -50%);
+  }
+
+  .image-container:nth-child(4) {
+    width: 40%;
+    aspect-ratio: 3 / 2;
+    top: 80%;
+    left: 5%;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    will-change: clip-path;
+    transform: translate(0, -50%);
+  }
+
+  .image-container:last-child {
+    width: 45%;
+    aspect-ratio: 5 / 3;
+    top: 70%;
+    right: 5%;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    will-change: clip-path;
+    transform: translate(-50%, -50%);
+  }
+
+  .image-container.ordered {
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    aspect-ratio: 1 / 1;
+    transform: translate(-50%, -50%);
+  }
+}
